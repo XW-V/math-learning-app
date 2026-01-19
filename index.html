@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>数学启蒙 - 20以内加减法</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- 顶部信息栏 -->
+        <header class="header">
+            <div class="score-display">
+                <div class="score-item">
+                    <span class="label">分数</span>
+                    <span class="value" id="score">0</span>
+                </div>
+                <div class="score-item">
+                    <span class="label">连击</span>
+                    <span class="value streak" id="streak">0</span>
+                </div>
+                <div class="score-item">
+                    <span class="label">时间</span>
+                    <span class="value" id="timer">00:00</span>
+                </div>
+            </div>
+            <button class="settings-btn" id="settingsBtn" aria-label="设置">⚙️</button>
+        </header>
+
+        <!-- 主内容区 -->
+        <main class="main-content">
+            <!-- 题目显示区 -->
+            <div class="question-section">
+                <div class="question-display" id="questionDisplay">
+                    <span class="number" id="num1">5</span>
+                    <span class="operator" id="operator">+</span>
+                    <span class="number" id="num2">3</span>
+                    <span class="equals">=</span>
+                    <span class="number answer" id="answer">?</span>
+                </div>
+            </div>
+
+            <!-- 动画展示区 -->
+            <div class="animation-section">
+                <!-- 显示动画按钮 -->
+                <div class="animation-control" id="animationControl">
+                    <button class="show-animation-btn" id="showAnimationBtn">
+                        <span class="btn-icon">👆</span>
+                    </button>
+                </div>
+                <!-- 实物计数动画容器 -->
+                <div class="object-counting" id="objectCounting" style="display: none;">
+                    <!-- 动态生成的计数对象 -->
+                </div>
+            </div>
+
+            <!-- 答案输入区 -->
+            <div class="answer-section">
+                <div class="answer-input-container">
+                    <input type="number" 
+                           id="answerInput" 
+                           class="answer-input" 
+                           placeholder="输入答案"
+                           min="0"
+                           max="20"
+                           autocomplete="off">
+                    <button class="submit-btn" id="submitBtn">提交</button>
+                </div>
+                
+                <!-- 数字键盘 -->
+                <div class="number-pad" id="numberPad">
+                    <button class="num-btn" data-value="1">1</button>
+                    <button class="num-btn" data-value="2">2</button>
+                    <button class="num-btn" data-value="3">3</button>
+                    <button class="num-btn" data-value="4">4</button>
+                    <button class="num-btn" data-value="5">5</button>
+                    <button class="num-btn" data-value="6">6</button>
+                    <button class="num-btn" data-value="7">7</button>
+                    <button class="num-btn" data-value="8">8</button>
+                    <button class="num-btn" data-value="9">9</button>
+                    <button class="num-btn" data-value="0">0</button>
+                    <button class="num-btn delete" id="deleteBtn">删除</button>
+                    <button class="num-btn clear" id="clearBtn">清除</button>
+                </div>
+            </div>
+
+            <!-- 反馈消息 -->
+            <div class="feedback-message" id="feedbackMessage"></div>
+        </main>
+
+        <!-- 设置面板（模态框） -->
+        <div class="modal-overlay" id="settingsModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>设置</h2>
+                    <button class="close-btn" id="closeSettingsBtn">×</button>
+                </div>
+                <div class="modal-body">
+                    <div class="setting-group">
+                        <label>题目类型</label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="questionType" value="addition" checked>
+                                <span>仅加法</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="questionType" value="subtraction">
+                                <span>仅减法</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="questionType" value="mixed">
+                                <span>混合</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="setting-group">
+                        <label>数字范围</label>
+                        <select id="numberRange" class="setting-select">
+                            <option value="10">1-10</option>
+                            <option value="20" selected>1-20</option>
+                        </select>
+                    </div>
+                    <div class="setting-group">
+                        <label>
+                            <input type="checkbox" id="enableTimer" checked>
+                            <span>启用计时器</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn-primary" id="saveSettingsBtn">保存设置</button>
+                    <button class="btn-secondary" id="resetScoreBtn">重置分数</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 奖励动画容器 -->
+        <div class="reward-container" id="rewardContainer"></div>
+    </div>
+
+    <!-- JavaScript文件 -->
+    <script src="js/audioManager.js"></script>
+    <script src="js/questionGenerator.js"></script>
+    <script src="js/animationController.js"></script>
+    <script src="js/scoreSystem.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

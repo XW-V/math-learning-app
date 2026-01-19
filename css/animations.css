@@ -1,0 +1,505 @@
+/* 动画样式文件 */
+
+/* 计数对象动画 */
+.counting-object {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    animation: objectAppear 0.5s ease-out;
+    margin: 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    flex-shrink: 0;
+}
+
+/* 不同类型的计数对象 - 根据类别设置背景色 */
+/* 同一类别中的两个图案使用不同色系来区分 */
+
+/* 动物类别 - 第一组用橙色系，第二组用蓝色系 */
+.counting-object.group1.icon-animal {
+    background: #FFB74D; /* 橙色 - 动物组1 */
+    color: #FFF9E6; /* 淡黄色护眼 */
+    border: 3px solid rgba(0, 0, 0, 0.15);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.counting-object.group2.icon-animal {
+    background: #42A5F5; /* 蓝色 - 动物组2 */
+    color: #FFF9E6; /* 淡黄色护眼 */
+    border: 3px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* 家具类别 - 第一组用棕色系，第二组用绿色系 */
+.counting-object.group1.icon-furniture {
+    background: #A1887F; /* 棕色 - 家具组1 */
+    color: #FFF9E6; /* 淡黄色护眼 */
+    border: 3px solid rgba(0, 0, 0, 0.15);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.counting-object.group2.icon-furniture {
+    background: #66BB6A; /* 绿色 - 家具组2 */
+    color: #FFF9E6; /* 淡黄色护眼 */
+    border: 3px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* 交通工具类别 - 第一组用蓝色系，第二组用红色系 */
+.counting-object.group1.icon-vehicle {
+    background: #64B5F6; /* 蓝色 - 交通工具组1 */
+    color: #FFF9E6; /* 淡黄色护眼 */
+    border: 3px solid rgba(0, 0, 0, 0.15);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.counting-object.group2.icon-vehicle {
+    background: #EF5350; /* 红色 - 交通工具组2 */
+    color: #FFF9E6; /* 淡黄色护眼 */
+    border: 3px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* 星球类别 - 第一组用紫色系，第二组用黄色系 */
+.counting-object.group1.icon-planet {
+    background: #BA68C8; /* 紫色 - 星球组1 */
+    color: #FFF9E6; /* 淡黄色护眼 */
+    border: 3px solid rgba(0, 0, 0, 0.15);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.counting-object.group2.icon-planet {
+    background: #FFD54F; /* 黄色 - 星球组2 */
+    color: #2C3E50;
+    border: 3px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* 食物类别 - 第一组用红色系，第二组用青色系 */
+.counting-object.group1.icon-food {
+    background: #FF6B6B; /* 红色 - 食物组1 */
+    color: #FFF9E6; /* 淡黄色护眼 */
+    border: 3px solid rgba(0, 0, 0, 0.15);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.counting-object.group2.icon-food {
+    background: #26A69A; /* 青色 - 食物组2 */
+    color: #FFF9E6; /* 淡黄色护眼 */
+    border: 3px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* 自然类别 - 第一组用绿色系，第二组用橙色系 */
+.counting-object.group1.icon-nature {
+    background: #81C784; /* 绿色 - 自然组1 */
+    color: #FFF9E6; /* 淡黄色护眼 */
+    border: 3px solid rgba(0, 0, 0, 0.15);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.counting-object.group2.icon-nature {
+    background: #FF8A65; /* 橙色 - 自然组2 */
+    color: #FFF9E6; /* 淡黄色护眼 */
+    border: 3px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* 玩具类别 - 第一组用黄色系，第二组用紫色系 */
+.counting-object.group1.icon-toy {
+    background: #FFE66D; /* 黄色 - 玩具组1 */
+    color: #2C3E50;
+    border: 3px solid rgba(0, 0, 0, 0.15);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.counting-object.group2.icon-toy {
+    background: #AB47BC; /* 紫色 - 玩具组2 */
+    color: #FFF9E6; /* 淡黄色护眼 */
+    border: 3px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* 运动类别 - 第一组用青色系，第二组用红色系 */
+.counting-object.group1.icon-sport {
+    background: #4ECDC4; /* 青色 - 运动组1 */
+    color: #FFF9E6; /* 淡黄色护眼 */
+    border: 3px solid rgba(0, 0, 0, 0.15);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.counting-object.group2.icon-sport {
+    background: #E57373; /* 红色 - 运动组2 */
+    color: #FFF9E6; /* 淡黄色护眼 */
+    border: 3px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* 默认类别 - 第一组用灰色系，第二组用蓝色系 */
+.counting-object.group1.icon-default {
+    background: #90A4AE; /* 灰色 - 默认组1 */
+    color: #FFF9E6; /* 淡黄色护眼 */
+    border: 3px solid rgba(0, 0, 0, 0.15);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.counting-object.group2.icon-default {
+    background: #5C9BD1; /* 蓝色 - 默认组2 */
+    color: #FFF9E6; /* 淡黄色护眼 */
+    border: 3px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* 减法运算使用默认样式（无group标识时） */
+.counting-object.icon-animal:not(.group1):not(.group2) {
+    background: #FFB74D; /* 橙色 - 动物 */
+    color: #FFF9E6; /* 淡黄色护眼 */
+}
+
+.counting-object.icon-furniture:not(.group1):not(.group2) {
+    background: #A1887F; /* 棕色 - 家具 */
+    color: #FFF9E6; /* 淡黄色护眼 */
+}
+
+.counting-object.icon-vehicle:not(.group1):not(.group2) {
+    background: #64B5F6; /* 蓝色 - 交通工具 */
+    color: #FFF9E6; /* 淡黄色护眼 */
+}
+
+.counting-object.icon-planet:not(.group1):not(.group2) {
+    background: #BA68C8; /* 紫色 - 星球 */
+    color: #FFF9E6; /* 淡黄色护眼 */
+}
+
+.counting-object.icon-food:not(.group1):not(.group2) {
+    background: #FF6B6B; /* 红色 - 食物 */
+    color: #FFF9E6; /* 淡黄色护眼 */
+}
+
+.counting-object.icon-nature:not(.group1):not(.group2) {
+    background: #81C784; /* 绿色 - 自然 */
+    color: #FFF9E6; /* 淡黄色护眼 */
+}
+
+.counting-object.icon-toy:not(.group1):not(.group2) {
+    background: #FFE66D; /* 黄色 - 玩具 */
+    color: #2C3E50;
+}
+
+.counting-object.icon-sport:not(.group1):not(.group2) {
+    background: #4ECDC4; /* 青色 - 运动 */
+    color: #FFF9E6; /* 淡黄色护眼 */
+}
+
+.counting-object.icon-default:not(.group1):not(.group2) {
+    background: #90A4AE; /* 灰色 - 默认 */
+    color: #FFF9E6; /* 淡黄色护眼 */
+}
+
+/* 对象出现动画 */
+@keyframes objectAppear {
+    0% {
+        opacity: 0;
+        transform: scale(0) rotate(-180deg);
+    }
+    50% {
+        transform: scale(1.2) rotate(0deg);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+/* 对象消失动画 */
+@keyframes objectDisappear {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0) rotate(180deg);
+    }
+}
+
+.counting-object.removing {
+    animation: objectDisappear 0.5s ease-in forwards;
+}
+
+/* 灰色效果 - 用于减法 */
+.counting-object.grayed-out {
+    opacity: 0.3;
+    filter: grayscale(100%);
+    transition: opacity 0.5s, filter 0.5s;
+}
+
+/* 合并动画 */
+.counting-object.merging {
+    animation: mergeAnimation 0.8s ease-out forwards;
+}
+
+@keyframes mergeAnimation {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-30px) scale(1.2);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+/* 对象跳动动画 */
+@keyframes objectBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.counting-object.bounce {
+    animation: objectBounce 0.6s ease-in-out infinite;
+}
+
+/* 正确反馈动画 */
+.feedback-correct {
+    animation: correctFeedback 0.6s ease-out;
+}
+
+@keyframes correctFeedback {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* 错误反馈动画 */
+.feedback-wrong {
+    animation: wrongFeedback 0.5s ease-out;
+}
+
+@keyframes wrongFeedback {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-10px);
+    }
+    75% {
+        transform: translateX(10px);
+    }
+}
+
+/* 星星奖励动画 */
+.star-reward {
+    position: absolute;
+    font-size: 40px;
+    animation: starReward 1s ease-out forwards;
+    pointer-events: none;
+}
+
+@keyframes starReward {
+    0% {
+        opacity: 0;
+        transform: scale(0) translateY(0) rotate(0deg);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.5) translateY(-50px) rotate(180deg);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.5) translateY(-100px) rotate(360deg);
+    }
+}
+
+/* 彩虹奖励动画 */
+.rainbow-reward {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #FF6B6B, #FFE66D, #4ECDC4, #95E1D3);
+    animation: rainbowReward 1.5s ease-out forwards;
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+@keyframes rainbowReward {
+    0% {
+        opacity: 0;
+        transform: scale(0) rotate(0deg);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1.5) rotate(180deg);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(2) rotate(360deg);
+    }
+}
+
+/* 连击奖励动画 */
+.streak-reward {
+    position: absolute;
+    font-size: 48px;
+    font-weight: bold;
+    color: #FFE66D;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    animation: streakReward 1s ease-out forwards;
+    pointer-events: none;
+}
+
+@keyframes streakReward {
+    0% {
+        opacity: 0;
+        transform: scale(0) translateY(0);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.3) translateY(-30px);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1) translateY(-60px);
+    }
+}
+
+
+/* 按钮按下动画 */
+.button-press {
+    animation: buttonPress 0.2s ease-out;
+}
+
+@keyframes buttonPress {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.95);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* 题目切换动画 */
+.question-fade {
+    animation: questionFade 0.4s ease-out;
+}
+
+@keyframes questionFade {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 分数增加动画 */
+.score-increase {
+    animation: scoreIncrease 0.5s ease-out;
+}
+
+@keyframes scoreIncrease {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.3);
+        color: #4ECDC4;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* 加载动画 */
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid var(--border-color);
+    border-top-color: var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* 成功庆祝动画 */
+.celebration {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 2000;
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: var(--primary-color);
+    animation: confettiFall 3s ease-out forwards;
+}
+
+.confetti:nth-child(2n) {
+    background: var(--secondary-color);
+}
+
+.confetti:nth-child(3n) {
+    background: var(--accent-color);
+}
+
+.confetti:nth-child(4n) {
+    background: var(--success-color);
+}
+
+@keyframes confettiFall {
+    0% {
+        opacity: 1;
+        transform: translateY(0) rotate(0deg);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(100vh) rotate(720deg);
+    }
+}
+
+/* 响应式动画调整 */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
