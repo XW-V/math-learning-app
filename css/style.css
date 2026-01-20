@@ -53,13 +53,15 @@ body {
 
 .app-container {
     width: 100vw;
-    height: 100vh;
+    height: calc(100vh - env(safe-area-inset-top));
+    max-height: calc(100vh - env(safe-area-inset-top));
     margin: 0 auto;
     background: var(--bg-color);
     display: flex;
     flex-direction: row;
     box-shadow: var(--shadow-lg);
     overflow: hidden;
+    padding-top: env(safe-area-inset-top);
 }
 
 /* 左侧信息栏 - 横屏布局 */
@@ -134,7 +136,8 @@ body {
     grid-template-rows: auto 1fr;
     gap: var(--spacing-lg);
     overflow: hidden;
-    height: 100vh;
+    height: calc(100vh - env(safe-area-inset-top));
+    max-height: calc(100vh - env(safe-area-inset-top));
 }
 
 /* 题目显示区 - 横屏布局 */
@@ -301,12 +304,28 @@ body {
     transition: border-color 0.3s, box-shadow 0.3s;
     -webkit-appearance: none;
     appearance: none;
+    cursor: default;
 }
 
 .answer-input:focus {
     outline: none;
     border-color: var(--secondary-color);
     box-shadow: 0 0 0 3px rgba(78, 205, 196, 0.2);
+}
+
+/* 阻止软键盘弹出 */
+.answer-input:focus,
+.answer-input:active {
+    -webkit-user-select: none;
+    user-select: none;
+    caret-color: transparent;
+}
+
+/* 阻止软键盘弹出 */
+.answer-input:focus,
+.answer-input:active {
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 .submit-btn {
@@ -575,15 +594,19 @@ body {
 @media (orientation: landscape) {
     body {
         overflow: hidden;
+        padding-top: env(safe-area-inset-top);
     }
     
     .app-container {
         width: 100vw;
-        height: 100vh;
+        height: calc(100vh - env(safe-area-inset-top));
+        max-height: calc(100vh - env(safe-area-inset-top));
+        padding-top: 0;
     }
     
     .main-content {
-        height: calc(100vh - 0px);
+        height: calc(100vh - env(safe-area-inset-top));
+        max-height: calc(100vh - env(safe-area-inset-top));
     }
     
     .question-display .number {

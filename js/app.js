@@ -39,9 +39,26 @@ class MathLearningApp {
             submitBtn.addEventListener('click', () => this.handleSubmit());
         }
 
-        // 回车键提交
+        // 阻止输入框弹出软键盘
         const answerInput = document.getElementById('answerInput');
         if (answerInput) {
+            // 阻止focus事件触发软键盘
+            answerInput.addEventListener('focus', (e) => {
+                e.preventDefault();
+                answerInput.blur();
+            }, true);
+            
+            // 阻止touchstart事件触发软键盘
+            answerInput.addEventListener('touchstart', (e) => {
+                e.preventDefault();
+            }, { passive: false });
+            
+            // 阻止点击事件触发软键盘
+            answerInput.addEventListener('click', (e) => {
+                e.preventDefault();
+            });
+            
+            // 回车键提交（虽然键盘不会弹出，但保留以防万一）
             answerInput.addEventListener('keypress', (e) => {
                 if (e.key === 'Enter') {
                     this.handleSubmit();
@@ -118,7 +135,7 @@ class MathLearningApp {
             btn.addEventListener('click', () => {
                 const value = btn.getAttribute('data-value');
                 answerInput.value += value;
-                answerInput.focus();
+                // 不调用focus()，避免触发软键盘
             });
         });
 
@@ -126,7 +143,7 @@ class MathLearningApp {
         if (deleteBtn) {
             deleteBtn.addEventListener('click', () => {
                 answerInput.value = answerInput.value.slice(0, -1);
-                answerInput.focus();
+                // 不调用focus()，避免触发软键盘
             });
         }
 
@@ -134,7 +151,7 @@ class MathLearningApp {
         if (clearBtn) {
             clearBtn.addEventListener('click', () => {
                 answerInput.value = '';
-                answerInput.focus();
+                // 不调用focus()，避免触发软键盘
             });
         }
     }
@@ -165,7 +182,7 @@ class MathLearningApp {
         const answerInput = document.getElementById('answerInput');
         if (answerInput) {
             answerInput.value = '';
-            answerInput.focus();
+            // 不调用focus()，避免触发软键盘
         }
     }
     
@@ -363,27 +380,11 @@ class MathLearningApp {
     }
 
     /**
-     * 显示奖励动画
+     * 显示奖励动画（随机选择）
      */
     showRewardAnimation() {
-        const rewardContainer = document.getElementById('rewardContainer');
-        if (!rewardContainer) return;
-
-        // 创建星星动画
-        for (let i = 0; i < 5; i++) {
-            setTimeout(() => {
-                const star = document.createElement('div');
-                star.className = 'star-reward';
-                star.textContent = '⭐';
-                star.style.left = `${Math.random() * 100}%`;
-                star.style.top = `${Math.random() * 50 + 25}%`;
-                rewardContainer.appendChild(star);
-
-                setTimeout(() => {
-                    star.remove();
-                }, 1000);
-            }, i * 100);
-        }
+        // 使用奖励动画管理器随机播放动画
+        rewardAnimations.playRandomAnimation();
     }
 
     /**
